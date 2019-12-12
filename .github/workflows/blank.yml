@@ -1,0 +1,19 @@
+name: extarct pfam files
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: linux
+
+    steps:
+    - uses: extarct pfam files from pfam datatbase
+    - name: extarct_pfam.py
+      run: python extract_pfam.py 
+    - name: extarct pfam files used for hmmmer
+      run: |
+        In order to run extract.pfam.py,  pfam database named "Pfam.hmm" need to be put into the same directory  of your ID list file which named "pfamID.txt" . 
+        Then run python extract.pfam.py.  
+        Finally,you can get your file named "OUT.txt". 
+        Change the name of output files if your want by editing the extract.pfam.txt at line 9: f = open('pfamID.hmm','a')
